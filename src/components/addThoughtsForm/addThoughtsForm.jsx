@@ -18,14 +18,16 @@ export function AddThoughtForm(props) {
       };
 
       props.addThought(thought);
-      setText('');
     }
+    const inputField = document.getElementById('input-field');
+    inputField.value = '';
   };
 
   return (
     <form className='AddThoughtForm' onSubmit={handleSubmit}>
       <input
         type='text'
+        id='input-field'
         aria-label="What's on your mind?"
         placeholder="What's on your mind?"
         onChange={handleTextChange}
